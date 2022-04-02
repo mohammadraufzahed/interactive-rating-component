@@ -73,6 +73,27 @@
       background-color: red;
     }
   }
+  &[submited] {
+    padding: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    & > .status {
+      background-color: var(--very-dark-blue);
+      color: var(--orange);
+      padding: 0.4em 1.2em;
+      margin-top: 1em;
+      border-radius: 20px;
+    }
+    & > .title {
+      margin: 0.5em;
+    }
+    & > .description {
+      margin: 0;
+    }
+  }
 }
 @keyframes shake {
   0% {

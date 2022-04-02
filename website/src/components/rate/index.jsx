@@ -1,13 +1,24 @@
 import { useState } from "preact/hooks";
 import StarIcon from "../../icons/Start";
+import ThanksIcon from "../../icons/thanks";
 import classes from "../../styles/components/Rate/index.module.scss";
 
 const Rate = ({ title, description }) => {
   const [active, setActive] = useState(0);
   const [submited, setSubmited] = useState(false);
   return (
-    <section className={classes.container}>
-      {submited ? null : (
+    <section submited={submited} className={classes.container}>
+      {submited ? (
+        <>
+          <ThanksIcon />
+          <span className={classes.status}>You Selected {active} out of 5</span>
+          <h1 className={classes.title}>Thank you!</h1>
+          <p className={classes.description}>
+            We appreciate you taking the time to give a rating. if you ever need
+            more support, don't hesitate to get in touch!
+          </p>
+        </>
+      ) : (
         <>
           <StarIcon width="20px" className={classes.icon} />
           <h1 className={classes.title}>{title}</h1>
